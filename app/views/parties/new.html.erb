@@ -1,0 +1,13 @@
+<h1> party form </h1>
+
+<%= form_for @party do |f| %>
+<%= f.label(:name) %> 
+<%= f.text_field :name %>
+<%= f.label(:budget) %> 
+<%= f.number_field :budget %>
+<%= f.label(:date) %> 
+<%= f.date_field :date %><br>
+<%= f.radio_button :private, true %> Private 
+<%= f.radio_button :private, false %> Public
+<%= f.submit %>
+    <% end %>

@@ -5,6 +5,7 @@ class CreateParties < ActiveRecord::Migration[6.1]
       t.datetime :date
       t.float :budget
       t.boolean :private
+      t.integer :category_id
 
       t.timestamps
     end
