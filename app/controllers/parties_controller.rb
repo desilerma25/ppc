@@ -9,6 +9,7 @@ class PartiesController < ApplicationController
 
     def new
         @party = Party.new
+        @party.build_category # both party and category will know of each other
     end
 
     def create
@@ -25,7 +26,7 @@ class PartiesController < ApplicationController
     private
 
     def party_params
-        params.require(:party).permit(:name, :date, :budget, :private)
+        params.require(:party).permit(:name, :date, :budget, :private, category_attributes: [:name])
     end
     
 end
